@@ -9,7 +9,7 @@ const colors = ['red', 'white', 'green'];
 let currentIndex = 0;
 function nextColor() {
   let color = colors[currentIndex % colors.length];
-  currentIndex++;
+  currentIndex = currentIndex + 1;
   return color;
 }
 
