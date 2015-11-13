@@ -16,7 +16,7 @@ function nextColor() {
 
 const one = 1;
 const moreStuff = [{}]
-console.info([1,2,3].map(console.info));
+
 
 class AppComponent extends React.Component {
   constructor(props, context) {
@@ -26,9 +26,11 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     let self = this;
-    setInterval(function () {
-      self.setState({background: nextColor()});
-      }, 3000);
+    this.interval = setInterval(()  => self.setState({background: nextColor()}), 3000);
+  }
+
+  componentDidUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
