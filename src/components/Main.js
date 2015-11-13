@@ -3,20 +3,16 @@ require('styles/App.css');
 
 import React from 'react';
 
-let someUnusedStuff = 'hello';
+
 let yeomanImage = require('../images/yeoman.png');
-const colors = ['red', 'white', 'green'];
+
+const colors = ['red', 'white', 'green', 'black'];
 let currentIndex = 0;
 function nextColor() {
   let color = colors[currentIndex % colors.length];
   currentIndex++;
   return color;
 }
-
-
-const one = 1;
-const moreStuff = [{}]
-console.info([1,2,3].map(console.info));
 
 class AppComponent extends React.Component {
   constructor(props, context) {
@@ -26,9 +22,11 @@ class AppComponent extends React.Component {
 
   componentDidMount() {
     let self = this;
-    setInterval(function () {
-      self.setState({background: nextColor()});
-      }, 3000);
+    this.interval = setInterval(()  => self.setState({background: nextColor()}), 3000);
+  }
+
+  componentDidUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
