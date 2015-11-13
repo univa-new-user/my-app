@@ -6,7 +6,7 @@ import React from 'react';
 
 let yeomanImage = require('../images/yeoman.png');
 
-const colors = ['red', 'white', 'green', 'black'];
+const colors = ['red', 'white', 'green', 'black', 'gray'];
 let currentIndex = 0;
 function nextColor() {
   let color = colors[currentIndex % colors.length];
