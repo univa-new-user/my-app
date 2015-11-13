@@ -3,20 +3,16 @@ require('styles/App.css');
 
 import React from 'react';
 
-let someUnusedStuff = 'hello';
+
 let yeomanImage = require('../images/yeoman.png');
-const colors = ['red', 'white', 'green'];
+
+const colors = ['red', 'white', 'green', 'black'];
 let currentIndex = 0;
 function nextColor() {
   let color = colors[currentIndex % colors.length];
   currentIndex = currentIndex + 1;
   return color;
 }
-
-
-const one = 1;
-const moreStuff = [{}]
-
 
 class AppComponent extends React.Component {
   constructor(props, context) {
